@@ -15,7 +15,7 @@ const restify = require('restify');
 const { BotFrameworkAdapter } = require('botbuilder');
 
 // This bot's main dialog.
-const { DentaBot } = require('./bot');
+const { DentistBot } = require('./bot');
 
 // Create HTTP server
 const server = restify.createServer();
@@ -62,12 +62,12 @@ const QnAConfiguration = {
     host: process.env.LanguageEndpointHostName
 };
 
-//const CluisConfiguration = {
-//    projectName: process.env.CluProjectName,
-//    endpointKey: process.env.CluAPIKey,
-//    endpoint: process.env.CluAPIHostName,
-//    deploymentName: process.env.CludeploymentName
-//}
+const CluisConfiguration = {
+    projectName: process.env.CluProjectName,
+    endpointKey: process.env.CluAPIKey,
+    endpoint: process.env.CluAPIHostName,
+    deploymentName: process.env.CludeploymentName
+}
 
 const SchedulerConfiguration = {
     SchedulerEndpoint: process.env.SchedulerEndpoint
@@ -75,12 +75,12 @@ const SchedulerConfiguration = {
 //pack each service configuration into 
 const configuration = {
     QnAConfiguration,
-   // CluisConfiguration,
+    CluisConfiguration,
     SchedulerConfiguration
 }
 
 // Create the main dialog.
-const myBot = new DentaBot(configuration, {});
+const myBot = new DentistBot(configuration, {});
 
 // Listen for incoming requests.
 server.post('/api/messages', async (req, res) => {

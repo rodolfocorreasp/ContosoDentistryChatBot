@@ -22,7 +22,7 @@
         "@azure/cognitiveservices-qnamaker-runtime": "^1.0.1",
         "@azure/core-auth": "^1.5.0",
         "@azure/ms-rest-azure-js": "^2.1.0",
-        "botbuilder": "^4.21.4",
+        "botbuilder": "^4.22.2",
         "botbuilder-ai": "^4.22.2",
         "dotenv": "^8.2.0",
         "package": "^1.0.1",
